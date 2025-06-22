@@ -1,13 +1,19 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Home from './pages/Home'
+import Signup from './pages/Signup'
+import Onboarding from './pages/Onboarding'
 
 function App() {
   return (
-    <main className="app">
-      <h1>FriendFinder</h1>
-      <p>Find nye venner baseret på dine interesser og værdier.</p>
-      <button>Kom i gang</button>
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+      </Routes>
+    </Router>
   )
 }
 
